@@ -14,10 +14,6 @@ Sebelum memulai menyentuh repository, pastikan komputer teman-teman memenuhi pra
 ```
 $ git clone https://gitlab.com/[username_kalian]/binar-challenge-chapter-8.git
 ```
-atau
-```
-$ git clone git@gitlab.com:username_kalian/binar-challenge-chapter-8.git
-```
 3. Pindah ke folder repository
 ```
 $ cd binar-challenge-chapter-8
