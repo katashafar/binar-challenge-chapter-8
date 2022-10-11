@@ -6,7 +6,6 @@ function Create() {
       <Container>
         <h1>Register</h1>
       </Container>
-
       <Container>
         <Form>
           <FormGroup>
