@@ -8,8 +8,8 @@ const LEVEL_BAR = 1000; // length of experience per level. Once experience reach
 exports.create = (req, res) => {
   if (!req.body.username || !req.body.email || !req.body.password) {
     res.status(400).json({
-      result: "FAILED",
-      message: "username or email or password field cannot be empty.",
+      message: "FAILED",
+      result: "username or email or password field cannot be empty.",
     });
     return;
   }
@@ -25,14 +25,14 @@ exports.create = (req, res) => {
   Player.create(player)
     .then((data) => {
       res.status(201).json({
-        result: "SUCCESS",
-        message: data,
+        message: "SUCCESS",
+        result: data,
       });
     })
     .catch((err) => {
       res.status(500).json({
-        result: "FAILED",
-        message:
+        message: "FAILED",
+        result:
           err.message || "Some error occurred while creating the Player.",
       });
     });
@@ -61,8 +61,8 @@ exports.findAll = (req, res) => {
   })
     .then((data) => {
       res.status(200).json({
-        result: "SUCCESS",
-        message: data,
+        message: "SUCCESS",
+        result: data,
       });
     })
     .catch((err) => {
@@ -79,14 +79,14 @@ exports.findById = (req, res) => {
   Player.findByPk(id)
     .then((data) => {
       res.status(200).json({
-        result: "SUCCESS",
-        message: data,
+        message: "SUCCESS",
+        result: data,
       });
     })
     .catch((err) => {
       res.status(500).json({
-        result: "FAILED",
-        message: "Error retrieving Player with id=" + id,
+        message: "FAILED",
+        result: "Error retrieving Player with id=" + id,
       });
     });
 };
@@ -95,8 +95,8 @@ exports.findById = (req, res) => {
 exports.getExperience = (req, res) => {
   if (!req.body.exp) {
     res.status(400).json({
-      result: "FAILED",
-      message: "exp field cannot be empty.",
+      message: "FAILED",
+      result: "exp field cannot be empty.",
     });
     return;
   }
@@ -118,21 +118,21 @@ exports.getExperience = (req, res) => {
       ).then((num) => {
         if (num == 1) {
           res.status(200).json({
-            result: "SUCCESS",
-            message: `Player with id=${id} has more experience.`,
+            message: "SUCCESS",
+            result: `Player with id=${id} has more experience.`,
           });
         } else {
           res.status(400).json({
-            result: "FAILED",
-            message: `Cannot update Player with id=${id}!`,
+            message: "FAILED",
+            result: `Cannot update Player with id=${id}!`,
           });
         }
       });
     })
     .catch((err) => {
       res.status(500).json({
-        result: "FAILED",
-        message: "Error updating Player exp with id=" + id,
+        message: "FAILED",
+        result: "Error updating Player exp with id=" + id,
       });
     });
 };
@@ -147,20 +147,20 @@ exports.update = (req, res) => {
     .then((num) => {
       if (num == 1) {
         res.status(200).json({
-          result: "SUCCESS",
-          message: "Player was updated successfully.",
+          message: "SUCCESS",
+          result: "Player was updated successfully.",
         });
       } else {
         res.status(400).json({
-          result: "FAILED",
-          message: `Cannot update Player with id=${id}. Maybe Player was not found or req.body is empty!`,
+          message: "FAILED",
+          result: `Cannot update Player with id=${id}. Maybe Player was not found or req.body is empty!`,
         });
       }
     })
     .catch((err) => {
       res.status(500).json({
-        result: "FAILED",
-        message: "Error updating Player with id=" + id,
+        message: "FAILED",
+        result: "Error updating Player with id=" + id,
       });
     });
 };
@@ -175,20 +175,20 @@ exports.delete = (req, res) => {
     .then((num) => {
       if (num == 1) {
         res.status(200).json({
-          result: "SUCCESS",
-          message: "Player was deleted successfully!",
+          message: "SUCCESS",
+          result: "Player was deleted successfully!",
         });
       } else {
         res.status(400).json({
-          result: "FAILED",
-          message: `Cannot delete Player with id=${id}. Maybe Player was not found!`,
+          message: "FAILED",
+          result: `Cannot delete Player with id=${id}. Maybe Player was not found!`,
         });
       }
     })
     .catch((err) => {
       res.status(500).json({
-        result: "FAILED",
-        message: "Could not delete Player with id=" + id,
+        message: "FAILED",
+        result: "Could not delete Player with id=" + id,
       });
     });
 };
