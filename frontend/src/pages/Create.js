@@ -26,7 +26,8 @@ function Create() {
           </FormGroup>
           <Button color="primary" type="submit">
             Submit
-          </Button>
+          </Button>{" "}
+          &nbsp;
           <Button color="danger" type="reset">
             Reset
           </Button>
