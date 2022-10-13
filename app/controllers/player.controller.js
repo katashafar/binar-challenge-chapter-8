@@ -32,8 +32,7 @@ exports.create = (req, res) => {
     .catch((err) => {
       res.status(500).json({
         message: "FAILED",
-        result:
-          err.message || "Some error occurred while creating the Player.",
+        result: err.message || "Some error occurred while creating the Player.",
       });
     });
 };

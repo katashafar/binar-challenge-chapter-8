@@ -1,20 +1,20 @@
 module.exports = (sequelize, Sequelize) => {
   const Player = sequelize.define("player", {
     username: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
     },
     email: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
     },
     password: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
     },
     experience: {
-      type: Sequelize.INTEGER
+      type: Sequelize.INTEGER,
     },
     lvl: {
-      type: Sequelize.INTEGER
-    }
+      type: Sequelize.INTEGER,
+    },
   });
 
   return Player;
