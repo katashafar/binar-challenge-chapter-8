@@ -21,8 +21,20 @@ function Create() {
 
     axios
       .post("/api/players", payload)
-      .then((response) => {})
-      .catch((error) => {});
+      .then((response) => {
+        reset();
+        alert("success");
+      })
+      .catch((error) => {
+        alert(error.response.data.result);
+      });
+  };
+
+  const reset = () => {
+    username.current.value = null;
+    email.current.value = null;
+    password.current.value = null;
+    exp.current.value = null;
   };
 
   return (
