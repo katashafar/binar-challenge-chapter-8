@@ -10,15 +10,6 @@ function Edit() {
       <Container>
         <Form>
           <FormGroup>
-            <Label>Email</Label>
-            <Input
-              type="email"
-              value="shafar@gmail.com"
-              placeholder="email"
-              name="email"
-            />
-          </FormGroup>
-          <FormGroup>
             <Label>Username</Label>
             <Input
               type="text"
@@ -28,9 +19,18 @@ function Edit() {
             />
           </FormGroup>
           <FormGroup>
-            <Label>Password</Label>
+            <Label>Email</Label>
             <Input
               type="email"
+              value="shafar@gmail.com"
+              placeholder="email"
+              name="email"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label>Password</Label>
+            <Input
+              type="text"
               value="12345"
               placeholder="password"
               name="password"
