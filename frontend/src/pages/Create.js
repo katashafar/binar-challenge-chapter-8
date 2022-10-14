@@ -9,16 +9,16 @@ function Create() {
       <Container>
         <Form>
           <FormGroup>
-            <Label>Email</Label>
-            <Input type="email" placeholder="email" name="email" />
-          </FormGroup>
-          <FormGroup>
             <Label>Username</Label>
             <Input type="text" placeholder="username" name="username" />
           </FormGroup>
           <FormGroup>
+            <Label>Email</Label>
+            <Input type="email" placeholder="email" name="email" />
+          </FormGroup>
+          <FormGroup>
             <Label>Password</Label>
-            <Input type="email" placeholder="password" name="password" />
+            <Input type="text" placeholder="password" name="password" />
           </FormGroup>
           <FormGroup>
             <Label>Experience</Label>
