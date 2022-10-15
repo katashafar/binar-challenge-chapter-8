@@ -1,12 +1,36 @@
-import { Table, Container, Input, Button, Form, FormGroup } from "reactstrap";
+import { Link } from "react-router-dom";
+import {
+  Table,
+  Container,
+  Input,
+  Button,
+  Form,
+  FormGroup,
+  Row,
+  Col,
+} from "reactstrap";
+import axios from "../lib/Axios";
+import { useState } from "react";
 function Home() {
+  const [players, setPlayers] = useState([]);
+  const getDataPlayers = async () => {
+    try {
+      const data = await axios.get("/api/players");
+      setPlayers(data.data.result);
+    } catch (error) {}
+  };
+
+  useState(() => {
+    getDataPlayers();
+  });
+
   return (
     <>
       <Container>
         <h1>Players List</h1>
       </Container>
       <Container>
-        <h2>Search</h2>
+        <h2>Search Player</h2>
         <Form>
           <FormGroup>
             <Input name="username" placeholder="Username" type="text" />
@@ -25,7 +49,15 @@ function Home() {
       <Container>
         <Button color="primary" type="submit">
           Search
-        </Button>
+        </Button>{" "}
+        &nbsp;
+        <Row>
+          <Col>
+            <Link to={"/create"}>
+              <Button color="success">Add New Player</Button>&nbsp;
+            </Link>
+          </Col>
+        </Row>
       </Container>
       <Container>
         <Table bordered responsive size="sm">

@@ -1,7 +1,17 @@
 /* eslint-disable no-unused-vars */
 import { useRef } from "react";
-import { Button, Form, FormGroup, Input, Label, Container } from "reactstrap";
+import {
+  Button,
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Container,
+  Row,
+  Col,
+} from "reactstrap";
 import axios from "../lib/Axios";
+import {Link} from "react-router-dom"
 
 function Create() {
   const username = useRef();
@@ -39,6 +49,15 @@ function Create() {
 
   return (
     <>
+      <Container>
+        <Row>
+          <Col>
+            <Link to={"/"}>
+              <Button color ="warning">Back</Button>
+            </Link>
+          </Col>
+        </Row>
+      </Container>
       <Container>
         <h1>Register</h1>
       </Container>
