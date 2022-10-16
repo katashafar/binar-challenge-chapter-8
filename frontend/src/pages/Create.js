@@ -52,6 +52,9 @@ function Create() {
   return (
     <>
       <Container>
+        <h1>Register</h1>
+      </Container>
+      <Container>
         <Row>
           <Col>
             <Link to={"/"}>
@@ -59,9 +62,6 @@ function Create() {
             </Link>
           </Col>
         </Row>
-      </Container>
-      <Container>
-        <h1>Register</h1>
       </Container>
       <Container>
         <Form onSubmit={onSubmit}>
