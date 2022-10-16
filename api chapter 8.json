@@ -1,0 +1,25 @@
+{
+  "message": "SUCCESS",
+  "result": [
+    {
+      "id": 7,
+      "username": "shafaryulianto",
+      "email": "shafar032@gmail.com",
+      "password": "123456",
+      "experience": 15,
+      "lvl": 0,
+      "createdAt": "2022-10-16T17:46:24.691Z",
+      "updatedAt": "2022-10-16T18:50:51.179Z"
+    },
+    {
+      "id": 9,
+      "username": "test",
+      "email": "test@gmail.com",
+      "password": "123456",
+      "experience": 99,
+      "lvl": 0,
+      "createdAt": "2022-10-16T19:20:36.016Z",
+      "updatedAt": "2022-10-16T19:20:36.016Z"
+    }
+  ]
+}
