@@ -1,0 +1,120 @@
+openapi: 3.0.0
+info:
+  title: API Binar Challenge Chapter 8
+  description: This is a simple API Binar Challenge Chapter 8
+  version: 1.0.0
+servers:
+  - url: https://virtserver.swaggerhub.com/SHAFAR032/chapter8/1.0.0
+    description: SwaggerHub API Auto Mocking
+tags:
+  - name: Shafar
+    description: Requirment for challenge chpater 8
+paths:
+  /api/players:
+    get:
+      tags:
+        - Player
+      summary: search all playes
+      description: |
+        You can search for all players or specific search by query parameters
+      parameters:
+        - name: username
+          in: query
+          description: username that register in database
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+        - name: email
+          in: query
+          description: email that register in database
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+        - name: experience
+          in: query
+          description: experience that register in database
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: integer
+        - name: lvl
+          in: query
+          description: level that register in database
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlayerFindAll'
+        '400':
+          description: bad input parameter
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+components:
+  schemas:
+    PlayerFindAll:
+      required:
+        - message
+        - result
+      type: object
+      properties:
+        message:
+          type: string
+          example: SUCCESS
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/Player'
+    Player:
+      required:
+        - id
+      properties:
+        id:
+          type: integer
+          example: 1
+        username:
+          type: string
+          example: shafar
+        email:
+          type: string
+          example: shafar@gmail.com
+        password:
+          type: string
+          example: '1234567'
+        experience:
+          type: integer
+          example: 90
+        lvl:
+          type: integer
+          example: 80
+        createdAt:
+          type: string
+          format: date
+        updatedAt:
+          type: string
+          format: date
+    inline_response_400:
+      required:
+        - message
+        - result
+      type: object
+      properties:
+        message:
+          type: string
+          example: FAILED
+        result:
+          type: string
+          example: Some error occured while creating the Player.
