@@ -9,7 +9,7 @@ import {
   Row,
 } from "reactstrap";
 import { useRef, useEffect } from "react";
-import { Link, Route, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "../lib/Axios";
 
 function Edit() {
