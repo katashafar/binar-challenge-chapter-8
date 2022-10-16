@@ -11,9 +11,10 @@ import {
   Col,
 } from "reactstrap";
 import axios from "../lib/Axios";
-import {Link} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
 
 function Create() {
+  const navigate = useNavigate();
   const username = useRef();
   const email = useRef();
   const password = useRef();
@@ -34,6 +35,7 @@ function Create() {
       .then((response) => {
         reset();
         alert("success");
+        navigate(-1);
       })
       .catch((error) => {
         alert(error.response.data.result);
@@ -53,7 +55,7 @@ function Create() {
         <Row>
           <Col>
             <Link to={"/"}>
-              <Button color ="warning">Back</Button>
+              <Button color="warning">Back</Button>
             </Link>
           </Col>
         </Row>

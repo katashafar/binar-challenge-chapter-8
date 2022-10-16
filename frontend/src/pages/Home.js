@@ -20,6 +20,14 @@ function Home() {
     } catch (error) {}
   };
 
+  const deletePlayer = async (id) => {
+    try {
+      await axios.delete("/api/players/" + id);
+      getDataPlayers();
+      alert("Delete Success");
+    } catch (error) {}
+  };
+
   useState(() => {
     getDataPlayers();
   });
@@ -68,37 +76,35 @@ function Home() {
               <th>Email</th>
               <th>Experience</th>
               <th>Level</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto@email.com</td>
-              <td>Crusader</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton@email.com</td>
-              <td>Ancient</td>
-              <td>12</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>theBird@email.com</td>
-              <td>Immortal</td>
-              <td>4</td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>Larry</td>
-              <td>theBird@email.com</td>
-              <td>Crusader</td>
-              <td>67</td>
-            </tr>
+            {players &&
+              players.map((player, index) => (
+                <tr key={index}>
+                  <th scope="row">{player.id}</th>
+                  <td>{player.username}</td>
+                  <td>{player.email}</td>
+                  <td>{player.experience}</td>
+                  <td>{player.lvl}</td>
+                  <td>
+                    <Link to={"/edit/" + player.id}>
+                      <Button size="sm" color="info">
+                        Edit
+                      </Button>{" "}
+                    </Link>
+                    &nbsp;
+                    <Button
+                      onClick={() => deletePlayer(player.id)}
+                      size="sm"
+                      color="danger"
+                    >
+                      Delete
+                    </Button>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </Table>
       </Container>
