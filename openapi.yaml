@@ -51,18 +51,18 @@ paths:
           schema:
             type: integer
       responses:
-        '200':
+        "200":
           description: search results matching criteria
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PlayerFindAll'
-        '400':
+                $ref: "#/components/schemas/PlayerFindAll"
+        "400":
           description: bad input parameter
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400'
+                $ref: "#/components/schemas/inline_response_400"
 components:
   schemas:
     PlayerFindAll:
@@ -77,7 +77,7 @@ components:
         result:
           type: array
           items:
-            $ref: '#/components/schemas/Player'
+            $ref: "#/components/schemas/Player"
     Player:
       required:
         - id
@@ -93,7 +93,7 @@ components:
           example: shafar@gmail.com
         password:
           type: string
-          example: '1234567'
+          example: "1234567"
         experience:
           type: integer
           example: 90
